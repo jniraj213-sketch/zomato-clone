@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>TOPPINGS | Food Delivery</title>
-
 <style>
 *{
     box-sizing:border-box;
@@ -19,7 +17,6 @@ body{
     color:#222;
 }
 
-/* HEADER */
 header{
     background:white;
     position:sticky;
@@ -95,10 +92,8 @@ header{
     border-radius:9px;
     font-weight:bold;
     cursor:pointer;
-    margin-left:10px;
 }
 
-/* OFFER BAR */
 .offerbar{
     background:#fff0e9;
     color:#b43813;
@@ -107,7 +102,6 @@ header{
     font-size:14px;
 }
 
-/* HERO */
 .hero{
     max-width:1200px;
     margin:25px auto;
@@ -167,7 +161,6 @@ header{
     border-radius:18px;
 }
 
-/* MAIN */
 .container{
     max-width:1200px;
     margin:auto;
@@ -188,7 +181,6 @@ header{
     margin-top:8px;
 }
 
-/* CATEGORIES */
 .categories{
     display:grid;
     grid-template-columns:repeat(8,1fr);
@@ -219,7 +211,6 @@ header{
     font-size:13px;
 }
 
-/* MENU */
 .section{
     margin-top:45px;
     scroll-margin-top:100px;
@@ -316,7 +307,6 @@ header{
     color:white;
 }
 
-/* CART */
 .cart{
     position:fixed;
     top:0;
@@ -392,7 +382,6 @@ header{
     width:100%;
 }
 
-/* FOOTER */
 footer{
     margin-top:70px;
     background:#222;
@@ -406,85 +395,66 @@ footer .logo{
     margin-bottom:10px;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
-
     .navbar{
         flex-wrap:wrap;
     }
-
     .search{
         order:5;
         flex-basis:100%;
     }
-
     .hero{
         margin:15px;
         padding:30px;
         flex-direction:column;
     }
-
     .hero h1{
         font-size:42px;
     }
-
     .hero-image img{
         width:100%;
     }
-
     .categories{
         grid-template-columns:repeat(4,1fr);
     }
-
     .food-grid{
         grid-template-columns:repeat(2,1fr);
     }
 }
 
 @media(max-width:550px){
-
     .logo{
         font-size:23px;
     }
-
     .location{
         display:none;
     }
-
     .categories{
         grid-template-columns:repeat(4,1fr);
     }
-
     .food-grid{
         grid-template-columns:1fr 1fr;
         gap:10px;
     }
-
     .food-img{
         height:130px;
     }
-
     .food-info{
         padding:10px;
     }
-
     .food-info h4{
         font-size:13px;
     }
-
     .hero{
         padding:25px;
     }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-
 <div class="navbar">
-
 <div class="logo">
 <span>TOP</span>PINGS
 </div>
@@ -512,103 +482,50 @@ Log in
 <button class="admin-btn" onclick="goToAdmin()">
 ⚙️ Admin
 </button>
-
 </div>
-
 </header>
 
 <div class="offerbar">
-🔥 <b>TOPPINGS SPECIAL</b> — Fresh vegetarian food delivered hot to your door
+🔥 <b>TOPPINGS SPECIAL</b> — Fresh food delivered hot to your door
 </div>
-
 
 <section class="hero">
-
 <div class="hero-text">
-
 <div class="badge">
-🌿 100% VEG • SHRAVAN SPECIAL
+🌿 100% FRESH • BEST QUALITY
 </div>
-
 <h1>
 Hungry?<br>
 <span>Let's fix that.</span>
 </h1>
-
 <p>
-Order your favourite pizzas, fries, momos,
-sandwiches, Maggie, Chinese food and sweets.
+Order your favourite items from our restaurant partners.
 </p>
-
 <button class="order-btn"
 onclick="document.getElementById('menu').scrollIntoView()">
 Order food →
 </button>
-
 </div>
 
 <div class="hero-image">
-
 <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85">
-
 </div>
-
 </section>
 
-
 <main class="container">
-
 <div class="title">
 <small>EXPLORE</small>
 <h2>What's on your mind?</h2>
 </div>
 
-<div class="categories">
-
-<div class="category" onclick="go('pizza')">
-<div>🍕</div><b>Pizza</b>
+<div class="categories" id="categoriesContainer">
+<!-- Categories will load from admin data -->
 </div>
-
-<div class="category" onclick="go('fries')">
-<div>🍟</div><b>Fries</b>
-</div>
-
-<div class="category" onclick="go('coffee')">
-<div>🥤</div><b>Cold Coffee</b>
-</div>
-
-<div class="category" onclick="go('momos')">
-<div>🥟</div><b>Momos</b>
-</div>
-
-<div class="category" onclick="go('sandwich')">
-<div>🥪</div><b>Sandwich</b>
-</div>
-
-<div class="category" onclick="go('maggie')">
-<div>🍜</div><b>Maggie</b>
-</div>
-
-<div class="category" onclick="go('chinese')">
-<div>🥢</div><b>Chinese</b>
-</div>
-
-<div class="category" onclick="go('sweets')">
-<div>🍰</div><b>Sweets</b>
-</div>
-
-</div>
-
 
 <div id="menu"></div>
-
 </main>
 
-
-<!-- CART -->
-
 <div class="cart" id="cart">
-
 <div class="cart-header">
 <h2>Your cart</h2>
 <button onclick="closeCart()">×</button>
@@ -618,7 +535,6 @@ Order food →
 </div>
 
 <div class="checkout">
-
 <div class="total">
 <span>Total</span>
 <span>₹<span id="total">0</span></span>
@@ -627,312 +543,174 @@ Order food →
 <button class="order-btn" onclick="checkout()">
 Proceed to checkout
 </button>
-
 </div>
-
 </div>
-
 
 <footer>
-
 <div class="logo">
 <span>TOP</span>PINGS
 </div>
-
 <p>
-© 2026 TOPPINGS — Fresh Vegetarian Cloud Kitchen
+© 2026 TOPPINGS — Fresh Food Delivery
 </p>
-
 </footer>
 
-
 <script>
+let cart = [];
+let allItems = {};
 
-const menu = {
-
-pizza:[
-["Margherita",189,"Classic cheese & tomato","https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"],
-["Fresh Veggie",199,"Onion, tomato & capsicum","https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=700&q=80"],
-["Cheese N Corn",199,"Sweet corn & extra cheese","https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80"],
-["Veggie Paradise",219,"Loaded garden vegetables","https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"],
-
-["Paneer Spice",209,"Spiced paneer & cheese","https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"],
-["Peppy Paneer",199,"Paneer with a peppy kick","https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80"],
-["Indian Tandoori Paneer",219,"Tandoori paneer & cheese","https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=700&q=80"],
-["Paneer Tikka",249,"Classic paneer tikka","https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"],
-
-["Cheese Overload",250,"Extra cheese loaded pizza","https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80"],
-["Veg Extravaganza",269,"Big loaded veggie pizza","https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=700&q=80"],
-["Mexican Veggie",279,"Mexican style veggie pizza","https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80"],
-["Garden Loaded",299,"Fully loaded vegetables","https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"]
-],
-
-fries:[
-["Classic Potato Fries",70,"Crispy golden fries","https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80"],
-["Peri Peri Fries",70,"Peri peri seasoning","https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80"],
-["Crunchy Tikka Fries",70,"Crunchy tikka flavour","https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80"]
-],
-
-coffee:[
-["Classic Cold Coffee",90,"Chilled creamy coffee","https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80"],
-["Chocolate Cold Coffee",110,"Chocolate cold coffee","https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80"],
-["Cold Coffee With Ice Cream",130,"Coffee topped with ice cream","https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80"]
-],
-
-momos:[
-["Veg Momos — Steamed",90,"6 pieces","https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=700&q=80"],
-["Veg Momos — Fried",100,"6 pieces","https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=700&q=80"],
-["Paneer Momos — Steamed",100,"6 pieces","https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=700&q=80"],
-["Paneer Momos — Fried",110,"6 pieces","https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=700&q=80"],
-["Cheese Momos — Steamed",110,"6 pieces","https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=700&q=80"],
-["Cheese Momos — Fried",120,"6 pieces","https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=700&q=80"],
-["Tandoori Momos — Fried",130,"6 pieces • fried only","https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=700&q=80"]
-],
-
-sandwich:[
-["Veg Grilled Sandwich",80,"Grilled veggie sandwich","https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"],
-["Cheese Corn Sandwich",100,"Cheese & sweet corn","https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"],
-["Paneer Tikka Sandwich",120,"Paneer tikka filling","https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80"]
-],
-
-maggie:[
-["Classic Maggie",60,"Classic comfort bowl","https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=700&q=80"],
-["Veggie Maggie",70,"Maggie with vegetables","https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=700&q=80"],
-["Cheese Maggie",90,"Cheesy Maggie","https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=700&q=80"]
-],
-
-chinese:[
-["Veg Hakka Noodles",150,"Classic veg noodles","https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=700&q=80"],
-["Schezwan Noodles",150,"Spicy Schezwan noodles","https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=700&q=80"],
-["Veg Fried Rice",150,"Wok tossed rice","https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80"],
-["Veg Manchurian",150,"Veg Manchurian","https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"]
-],
-
-sweets:[
-["Gulab Jamun",50,"2 pieces","https://images.unsplash.com/photo-1601303516534-ef0a6a5c1bfe?auto=format&fit=crop&w=700&q=80"],
-["Chocolate Brownie",80,"Rich chocolate brownie","https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80"],
-["Chocolate Lava Cake",100,"Warm chocolate centre","https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80"]
-]
-
-};
-
-let cart=[];
-
-function createMenu(){
-
-let output="";
-
-for(let category in menu){
-
-output+=`
-
-<div class="section" id="${category}">
-
-<div class="section-title">
-<h3>${category.toUpperCase()}</h3>
-</div>
-
-<div class="food-grid">
-`;
-
-menu[category].forEach(item=>{
-
-output+=`
-
-<div class="food-card">
-
-<div class="food-img">
-
-<img src="${item[3]}" alt="${item[0]}">
-
-<div class="veg">● VEG</div>
-
-</div>
-
-<div class="food-info">
-
-<h4>${item[0]}</h4>
-
-<p>${item[2]}</p>
-
-<div class="food-bottom">
-
-<span class="price">₹${item[1]}</span>
-
-<button class="add"
-onclick="addToCart('${item[0]}',${item[1]})">
-ADD
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-output+=`</div></div>`;
-
+// Load data from local storage
+function loadData() {
+    const savedData = localStorage.getItem('toppingsData');
+    if (savedData) {
+        allItems = JSON.parse(savedData);
+    } else {
+        // Default empty structure
+        allItems = {};
+    }
+    displayMenu();
 }
 
-document.getElementById("menu").innerHTML=output;
+// Display menu from admin data
+function displayMenu() {
+    const menuDiv = document.getElementById('menu');
+    const categoriesDiv = document.getElementById('categoriesContainer');
+    let menuHTML = '';
+    let categoriesHTML = '';
+    let categoryList = [];
 
+    for (let restaurant in allItems) {
+        const items = allItems[restaurant] || [];
+        if (items.length > 0) {
+            menuHTML += `<div class="section" id="${restaurant}">
+                <div class="section-title">
+                <h3>${restaurant.toUpperCase()}</h3>
+                </div>
+                <div class="food-grid">`;
+
+            items.forEach(item => {
+                menuHTML += `<div class="food-card">
+                    <div class="food-img">
+                    <img src="${item.image || 'https://via.placeholder.com/300'}" alt="${item.name}">
+                    <div class="veg">● FOOD</div>
+                    </div>
+                    <div class="food-info">
+                    <h4>${item.name}</h4>
+                    <p>${item.description || 'Delicious food'}</p>
+                    <div class="food-bottom">
+                    <span class="price">₹${item.price}</span>
+                    <button class="add" onclick="addToCart('${item.name.replace(/'/g, "\\'")}',${ item.price})">ADD</button>
+                    </div>
+                    </div>
+                    </div>`;
+            });
+            menuHTML += `</div></div>`;
+            categoryList.push(restaurant);
+        }
+    }
+
+    // Create category buttons
+    categoryList.forEach(cat => {
+        categoriesHTML += `<div class="category" onclick="go('${cat}')">
+            <div>🍽️</div><b>${cat}</b>
+            </div>`;
+    });
+
+    if (categoryList.length === 0) {
+        menuHTML = '<p style="padding:20px; text-align:center; color:#aaa;">No items added yet. Visit admin to add items.</p>';
+    }
+
+    if (categoriesHTML === '') {
+        categoriesHTML = '<p style="padding:20px; text-align:center; color:#aaa;">No restaurants added yet.</p>';
+    }
+
+    categoriesDiv.innerHTML = categoriesHTML;
+    menuDiv.innerHTML = menuHTML;
 }
 
-function addToCart(name,price){
-
-cart.push({name,price});
-
-updateCart();
-
+function addToCart(name, price) {
+    cart.push({name, price});
+    updateCart();
 }
 
-function updateCart(){
+function updateCart() {
+    document.getElementById('cartCount').innerText = cart.length;
+    let html = '';
+    let total = 0;
 
-document.getElementById("cartCount").innerText=cart.length;
+    cart.forEach((item, index) => {
+        total += item.price;
+        html += `<div class="cart-item">
+            <div>
+            <b>${item.name}</b>
+            <small>₹${item.price}</small>
+            </div>
+            <div>
+            <button class="remove" onclick="removeItem(${index})">×</button>
+            </div>
+            </div>`;
+    });
 
-let html="";
+    if (cart.length === 0) {
+        html = "<p style='padding:25px;color:#777'>Your cart is empty 🍽️</p>";
+    }
 
-let total=0;
-
-cart.forEach((item,index)=>{
-
-total+=item.price;
-
-html+=`
-
-<div class="cart-item">
-
-<div>
-
-<b>${item.name}</b>
-
-<small>Vegetarian</small>
-
-</div>
-
-<div>
-
-<b>₹${item.price}</b>
-
-<button class="remove"
-onclick="removeItem(${index})">
-×
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-if(cart.length===0){
-
-html="<p style='padding:25px;color:#777'>Your cart is empty 🍕</p>";
-
+    document.getElementById('cartItems').innerHTML = html;
+    document.getElementById('total').innerText = total;
 }
 
-document.getElementById("cartItems").innerHTML=html;
-
-document.getElementById("total").innerText=total;
-
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
 }
 
-function removeItem(index){
-
-cart.splice(index,1);
-
-updateCart();
-
+function openCart() {
+    document.getElementById('cart').classList.add('open');
 }
 
-function openCart(){
-
-document.getElementById("cart").classList.add("open");
-
+function closeCart() {
+    document.getElementById('cart').classList.remove('open');
 }
 
-function closeCart(){
-
-document.getElementById("cart").classList.remove("open");
-
+function go(id) {
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
 }
 
-function go(id){
-
-document.getElementById(id).scrollIntoView({
-behavior:"smooth"
-});
-
+function setLocation() {
+    let location = prompt('Enter your delivery location:');
+    if (location) {
+        document.getElementById('location').innerText = location;
+    }
 }
 
-function setLocation(){
-
-let location=prompt("Enter your delivery location:");
-
-if(location){
-
-document.getElementById("location").innerText=location;
-
+function searchFood() {
+    let search = document.getElementById('search').value.toLowerCase();
+    document.querySelectorAll('.food-card').forEach(card => {
+        let name = card.querySelector('h4').innerText.toLowerCase();
+        card.style.display = name.includes(search) ? 'block' : 'none';
+    });
 }
 
+function checkout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    alert(`Order placed! Total: ₹${document.getElementById('total').innerText}`);
+    cart = [];
+    updateCart();
+    closeCart();
 }
 
-function searchFood(){
-
-let search=document
-.getElementById("search")
-.value
-.toLowerCase();
-
-document.querySelectorAll(".food-card")
-.forEach(card=>{
-
-let name=card
-.querySelector("h4")
-.innerText
-.toLowerCase();
-
-card.style.display=
-name.includes(search)
-?"block"
-:"none";
-
-});
-
+function goToAdmin() {
+    window.location.href = 'admin.html';
 }
 
-function checkout(){
+// Load data when page opens
+loadData();
 
-if(cart.length===0){
-
-alert("Your cart is empty!");
-
-return;
-
-}
-
-alert(
-"Checkout is ready! Next we can connect customer details, payment and real orders."
-);
-
-}
-
-function goToAdmin(){
-
-window.location.href='admin.html';
-
-}
-
-createMenu();
-
-updateCart();
-
+// Listen for storage changes (when admin updates data)
+window.addEventListener('storage', loadData);
 </script>
 
 </body>
